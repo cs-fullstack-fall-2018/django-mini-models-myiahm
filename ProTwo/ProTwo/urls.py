@@ -16,10 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.conf.urls import include
-from appTwo import views
+from apptwo import views
 
 urlpatterns = [
     url(r'^$',views.index,name='index'),
-    url(r'^users/',include('appTwo.urls')),
+    url(r'^users/',include('apptwo.urls')),
     url(r'^admin/', admin.site.urls),
 ]

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from appTwo.models import User
+from .models import User
 
 
 # Create your views here.
@@ -10,5 +10,6 @@ def index(request):
 
 
 def users(request):
-    # THIS AINT WORKING
-    return render(request, 'apptwo/users.html')
+    user_list = User.objects.all()
+    context = {'user_list': user_list}
+    return render(request, 'apptwo/users.html', context)
